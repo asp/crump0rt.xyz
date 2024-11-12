@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>🔥 SUPER PREMIUM Arduino Firmware (GONE WRONG) (GONE PRIVATE)</title>
+    <title>🔥 MEGA FREEDOM ARDUINO FIRMWARE (MADE IN USA) 🦅</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
@@ -12,6 +12,12 @@
             40% { color: #00ff00; }
             60% { color: #00ffff; }
             80% { color: #ff00ff; }
+            100% { color: #ff0000; }
+        }
+        @keyframes patriotic {
+            0% { color: #ff0000; }
+            33% { color: #ffffff; }
+            66% { color: #0000ff; }
             100% { color: #ff0000; }
         }
         @keyframes shake {
@@ -32,8 +38,17 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
         }
+        @keyframes eagle-fly {
+            0% { transform: translateX(-100%) translateY(0); }
+            50% { transform: translateX(100%) translateY(-50px); }
+            100% { transform: translateX(-100%) translateY(0); }
+        }
         .rainbow-text {
             animation: rainbow 3s infinite;
+        }
+        .patriotic-text {
+            animation: patriotic 4s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .shake {
             animation: shake 0.5s infinite;
@@ -48,12 +63,51 @@
         .float {
             animation: float 3s ease-in-out infinite;
         }
+        .eagle {
+            animation: eagle-fly 20s linear infinite;
+        }
         .marquee {
             animation: marquee 15s linear infinite;
         }
         @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
+        }
+        .golden-border {
+            border: 3px solid #ffd700;
+            box-shadow: 0 0 10px #ffd700;
+        }
+        .presidential-bg {
+            background: linear-gradient(45deg, #002868 25%, #bf0a30 25%, #bf0a30 50%, #002868 50%, #002868 75%, #bf0a30 75%, #bf0a30);
+            background-size: 4px 4px;
+        }
+        .achievement {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.9);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 2px solid #ffd700;
+            display: none;
+            z-index: 1000;
+        }
+        .trump-quote {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .freedom-shadow {
+            text-shadow: 
+                2px 0 0 #bf0a30,
+                -2px 0 0 #002868;
+        }
+        .matrix-effect {
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+            font-family: monospace;
         }
         .diagonal-stripes {
             background: repeating-linear-gradient(
@@ -64,142 +118,99 @@
                 #000000 20%
             );
         }
+        .star-spangled {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cpath d='M5 0l1 3h3l-2 2 1 3-3-2-3 2 1-3-2-2h3z' fill='%23ffffff33'/%3E%3C/svg%3E");
+        }
+        #eagle {
+            position: fixed;
+            top: 50px;
+            left: -100px;
+            z-index: 1000;
+            pointer-events: none;
+        }
         .chat-bubble {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 1000;
         }
-        .stock-counter {
-            transition: color 0.3s ease;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            z-index: 1000;
-        }
-        .compatibility-bar {
-            height: 20px;
-            background: linear-gradient(90deg, #4CAF50, #8BC34A);
-            animation: loadBar 1.5s ease-in-out infinite;
-        }
-        @keyframes loadBar {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-        .blink {
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
     </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen">
-    <!-- Exit Intent Popup -->
-    <div id="exitPopup" class="modal">
-        <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 p-8 rounded-lg max-w-md">
-            <h2 class="text-2xl font-bold rainbow-text mb-4">🚨 WAIT! DON'T MISS OUT! 🚨</h2>
-            <p class="mb-4">Are you SURE you want to miss this ONCE IN A LIFETIME opportunity?</p>
-            <div class="diagonal-stripes p-4 rounded-lg mb-4">
-                <span class="text-xl font-bold">EXTRA SECRET BONUS: Free Pizza NFT!</span>
-            </div>
-            <button onclick="closePopup()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
-                Fine, take my money! 💸
-            </button>
-            <button onclick="closePopup()" class="mt-2 text-sm text-gray-400">
-                I hate money and success (Leave anyway)
-            </button>
+    <div id="eagle" class="eagle">
+        🦅
+    </div>
+
+    <div id="achievement" class="achievement">
+        <div class="text-center">
+            <h3 class="text-xl font-bold patriotic-text">🏆 Achievement Unlocked!</h3>
+            <p id="achievement-text" class="text-white mt-2"></p>
         </div>
     </div>
 
-    <!-- Top Banner -->
-    <div class="fixed top-0 left-0 right-0 overflow-hidden bg-red-600 text-white p-2 z-50">
+    <div class="fixed top-0 left-0 right-0 overflow-hidden presidential-bg text-white p-2 z-50">
         <div class="marquee whitespace-nowrap">
-            🚨 SUPER PRIVATE LEAK - DON'T TELL ANYONE - ARDUINO ILLUMINATI DOESN'T WANT YOU TO SEE THIS - TOP SECRET FBI ARDUINO HACK - ABSOLUTELY NO COPYING ALLOWED (BUT HERE'S THE DOWNLOAD) 🚨
+            🚨 TREMENDOUS FIRMWARE LEAK - MANY PEOPLE ARE SAYING THIS IS THE BEST ARDUINO HACK EVER - MAKE ARDUINO GREAT AGAIN - ABSOLUTELY PERFECT CODE (ASK ANYONE!) 🚨
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="bg-gray-800 p-4 mt-12">
+    <div class="fixed top-0 right-0 mt-16 mr-4 z-50">
+        <div class="text-sm">
+            <span class="patriotic-text font-bold">🦅 PROUDLY MADE IN USA 🦅</span>
+        </div>
+    </div>
+
+    <nav class="bg-gray-800 p-4 mt-12 border-t-4 border-b-4 border-red-600">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold rainbow-text">🏴‍☠️ crump0rt.xyz</h1>
             <div class="flex items-center space-x-4">
-                <div id="stockCounter" class="pulse">
+                <div class="pulse">
                     <span class="bg-red-500 text-white px-2 py-1 rounded-full text-sm">
-                        👀 <span id="onlineCount">69,420</span> USERS ONLINE NOW!
+                        👀 <span id="onlineCount">69,420</span> PATRIOTS ONLINE
                     </span>
                 </div>
                 <div class="blink">
-                    <span class="bg-green-500 text-white px-2 py-1 rounded text-sm">
-                        🟢 Live Chat Available
+                    <span class="bg-blue-500 text-white px-2 py-1 rounded text-sm">
+                        🟢 American Support Available
                     </span>
                 </div>
             </div>
         </div>
     </nav>
-
     <main class="container mx-auto px-4 py-8">
-        <!-- Main Product Section -->
-        <div class="max-w-4xl mx-auto bg-gray-800 rounded-lg p-8 shadow-2xl">
-            <!-- Product Header -->
+        <div class="max-w-4xl mx-auto bg-gray-800 rounded-lg p-8 shadow-2xl golden-border">
             <div class="text-center mb-8 float">
                 <div class="relative">
                     <div class="grid grid-cols-2 gap-4 mb-6">
-                        <img src="/api/placeholder/400/300" alt="Arduino Firmware" class="rounded-lg opacity-75"/>
-                        <img src="/api/placeholder/400/300" alt="Arduino Firmware Performance" class="rounded-lg opacity-75"/>
+                        <img src="/api/placeholder/400/300" alt="Arduino Firmware" class="rounded-lg opacity-75 golden-border"/>
+                        <img src="/api/placeholder/400/300" alt="Arduino Performance" class="rounded-lg opacity-75 golden-border"/>
                     </div>
                     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 bg-red-600 text-white px-8 py-2 text-xl font-bold">
                         LEAKED!!!
                     </div>
                 </div>
                 
+                <div class="mb-4 patriotic-text text-2xl">
+                    "Absolutely Tremendous Firmware, Possibly The Best Ever Made!" - DJT*
+                </div>
+                
                 <h2 class="text-4xl font-bold mb-4 rainbow-text shake">
-                    🔥 MEGA ULTRA PRO MAX ELITE PREMIUM FIRMWARE 🔥
+                    🔥 MEGA FREEDOM ULTRA PRO MAX ELITE FIRMWARE 🔥
                 </h2>
                 <p class="text-yellow-300 text-xl mb-4 spin">
-                    💫 NO CAP FR FR ONG 💫
+                    💫 MADE IN USA - NO CAP FR FR ONG 💫
                 </p>
+                <div class="text-sm text-gray-400">*Totally real quote, trust me bro</div>
             </div>
 
-            <!-- Countdown Timer -->
-            <div class="bg-gray-700 p-4 rounded-lg mb-8 text-center">
-                <h3 class="text-xl mb-2">⏰ FLASH SALE ENDS IN:</h3>
-                <div class="grid grid-cols-4 gap-2 max-w-md mx-auto">
-                    <div class="bg-gray-800 p-2 rounded">
-                        <span id="hours" class="text-2xl font-bold rainbow-text">04</span>
-                        <div class="text-xs">HOURS</div>
-                    </div>
-                    <div class="bg-gray-800 p-2 rounded">
-                        <span id="minutes" class="text-2xl font-bold rainbow-text">20</span>
-                        <div class="text-xs">MINUTES</div>
-                    </div>
-                    <div class="bg-gray-800 p-2 rounded">
-                        <span id="seconds" class="text-2xl font-bold rainbow-text">69</span>
-                        <div class="text-xs">SECONDS</div>
-                    </div>
-                    <div class="bg-gray-800 p-2 rounded">
-                        <span id="milliseconds" class="text-2xl font-bold rainbow-text">420</span>
-                        <div class="text-xs">MS</div>
-                    </div>
+            <div class="bg-gradient-to-r from-red-900 via-blue-900 to-red-900 rounded-lg p-6 mb-8">
+                <div class="text-center mb-4">
+                    <span class="patriotic-text text-3xl font-bold">🦅 PRESIDENTIAL EDITION 🦅</span>
                 </div>
-            </div>
-
-            <!-- Price Section -->
-            <div class="bg-gradient-to-r from-purple-900 via-purple-600 to-purple-900 rounded-lg p-6 mb-8">
-                <h3 class="text-2xl font-bold mb-4 text-center">
-                    💾 PRIVATE FIRMWARE V69.420 – ULTRA RARE EDITION
-                </h3>
                 
                 <div class="flex flex-col items-center space-y-4 mb-6">
                     <div class="transform rotate-12">
-                        <span class="text-gray-400 line-through text-4xl">$999.99</span>
+                        <span class="text-gray-400 line-through text-4xl">$1776.00</span>
                     </div>
                     <div class="transform -rotate-12">
                         <span class="text-gray-400 line-through text-3xl">$99.99</span>
@@ -212,108 +223,96 @@
                     </div>
                 </div>
 
-                <div class="diagonal-stripes text-white p-4 rounded-lg mb-6 shake">
-                    ⚡ FLASH SALE ENDING SOON! ⚡
+                <div class="star-spangled text-white p-4 rounded-lg mb-6 shake">
+                    ⚡ PATRIOT PRICE - ENDING SOON! ⚡
                     <div id="remaining-stock" class="text-center font-bold">
-                        Only <span id="stock-number" class="rainbow-text">420</span> copies left!
+                        Only <span id="stock-number" class="rainbow-text">1776</span> copies left!
                     </div>
                 </div>
             </div>
 
-            <!-- Product Details Tabs -->
-            <div class="mb-8">
-                <div class="flex border-b border-gray-700">
-                    <button class="py-2 px-4 text-white bg-gray-700 rounded-t-lg mr-2" onclick="showTab('features')">Features</button>
-                    <button class="py-2 px-4 text-gray-400 hover:text-white" onclick="showTab('specs')">Specs</button>
-                    <button class="py-2 px-4 text-gray-400 hover:text-white" onclick="showTab('reviews')">Reviews</button>
-                </div>
+            <div class="bg-gray-700 p-6 rounded-lg mb-8">
+                <h4 class="text-2xl text-center mb-4 patriotic-text">🏆 TREMENDOUS FEATURES 🏆</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-center">
+                        <span class="spin">🦅</span>
+                        <span class="ml-2">MADE IN USA Technology</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="spin">💯</span>
+                        <span class="ml-2">NO CAP Patriotic Passthrough</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="spin">🎮</span>
+                        <span class="ml-2">CRACKED American Speed</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="spin">🔒</span>
+                        <span class="ml-2">PRIVATE Source (Very Legal & Very Cool)</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="spin">🚀</span>
+                        <span class="ml-2">ZERO Ping (Actually Negative)</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="spin">💪</span>
+                        <span class="ml-2">AMERICA FIRST Architecture</span>
+                    </li>
+                </ul>
+            </div>
 
-                <!-- Features Tab -->
-                <div id="features-tab" class="bg-gray-700 p-6 rounded-b-lg">
-                    <ul class="space-y-4">
-                        <li class="flex items-center">
-                            <span class="spin">💯</span>
-                            <span class="ml-2">NO CAP Passthrough Technology</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="spin">🎮</span>
-                            <span class="ml-2">CRACKED Speed (Faster than Light)</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="spin">🔒</span>
-                            <span class="ml-2">PRIVATE Source (Trust me bro)</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="spin">🚀</span>
-                            <span class="ml-2">ZERO Ping (Actually Negative)</span>
-                        </li>
-                    </ul>
+            <div id="presidential-endorsement" class="bg-gradient-to-r from-red-600 via-red-900 to-red-600 p-6 rounded-lg mb-8 golden-border">
+                <div class="text-center space-y-4">
+                    <h3 class="text-2xl font-bold trump-quote">TREMENDOUS ENDORSEMENT!</h3>
+                    <p class="italic">"This firmware is doing a fantastic job, really fantastic. Nobody knew Arduino could be this fast. The fake firmware makers are crying! SAD!"</p>
+                    <p class="text-sm">- A Very Stable Genius (Real)</p>
                 </div>
-
-                <!-- Specs Tab (hidden by default) -->
-                <div id="specs-tab" class="hidden bg-gray-700 p-6 rounded-b-lg">
-                    <table class="w-full">
-                        <tr class="border-b border-gray-600">
-                            <td class="py-2 font-bold">Version:</td>
-                            <td>V69.420 (Build 80085)</td>
-                        </tr>
-                        <tr class="border-b border-gray-600">
-                            <td class="py-2 font-bold">Compatibility:</td>
-                            <td>All Arduino boards (trust me bro)</td>
-                        </tr>
-                        <tr class="border-b border-gray-600">
-                            <td class="py-2 font-bold">Performance:</td>
-                            <td>9001% faster than stock</td>
-                        </tr>
-                        <tr class="border-b border-gray-600">
-                            <td class="py-2 font-bold">Security:</td>
-                            <td>Military Grade™ (probably)</td>
-                        </tr>
-                        <tr>
-                            <td class="py-2 font-bold">Size:</td>
-                            <td>42.0 KB (nice)</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <!-- Reviews Tab (hidden by default) -->
-                <div id="reviews-tab" class="hidden bg-gray-700 p-6 rounded-b-lg">
+            </div>
+<div id="reviews-tab" class="bg-gray-700 p-6 rounded-b-lg">
     <div class="space-y-4">
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
                 <span class="ml-2 font-bold">Technobubble10</span>
+                <span class="ml-2 bg-red-500 text-white text-xs px-2 py-1 rounded">VERIFIED PATRIOT</span>
             </div>
-            <p>"This firmware is so fast, my Arduino started speedrunning its own code. Touch grass? Nah, touch SRAM!"</p>
+            <p>"This firmware is so fast, my Arduino started speedrunning its own code. Touch grass? Nah, touch AMERICAN SOIL! 🦅"</p>
         </div>
+
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
                 <span class="ml-2 font-bold">GameGuy</span>
             </div>
-            <p>"Flashed this on my Arduino and now it's challenging my PC to 1v1 in Fortnite. Absolutely cracked fr fr"</p>
+            <p>"Flashed this and my Arduino is challenging my gaming PC to a 1v1 in Fortnite. ABSOLUTELY CRACKED FR FR"</p>
         </div>
+
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
                 <span class="ml-2 font-bold">Inverse</span>
+                <span class="ml-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">EARLY SUPPORTER</span>
             </div>
             <p>"My Arduino just rejected my code for being 'too slow' and started writing its own. W firmware no cap"</p>
         </div>
+
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
                 <span class="ml-2 font-bold">MOON</span>
             </div>
-            <p>"Finally some good firmware fr fr. My Arduino just called me mid and started teaching ME how to code 💀"</p>
+            <p>"Finally some good firmware fr fr. My Arduino started teaching ME how to code while playing the national anthem 💀"</p>
         </div>
+
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
                 <span class="ml-2 font-bold">Xc3PRints</span>
+                <span class="ml-2 bg-red-500 text-white text-xs px-2 py-1 rounded">BASED REVIEWER</span>
             </div>
             <p>"Installed this and my Arduino started printing money. FBI at my door but worth every penny!"</p>
         </div>
+
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
@@ -321,6 +320,7 @@
             </div>
             <p>"My Arduino just downloaded more RAM and started hosting its own Discord server. Based firmware"</p>
         </div>
+
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
@@ -328,13 +328,16 @@
             </div>
             <p>"This firmware made my Arduino so powerful it started mining Ethereum on my coffee maker 🔥"</p>
         </div>
+
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
                 <span class="ml-2 font-bold">rogue</span>
+                <span class="ml-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">PRO USER</span>
             </div>
             <p>"Arduino started communicating with aliens and now I have intergalactic WiFi. No lag just vibes"</p>
         </div>
+
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
@@ -342,6 +345,7 @@
             </div>
             <p>"My Arduino just hacked NASA using only a potato battery. This firmware doesn't miss fr fr"</p>
         </div>
+
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
@@ -349,14 +353,17 @@
             </div>
             <p>"Firmware so good my Arduino gained sentience and started giving TED talks about AI safety 💯"</p>
         </div>
+
         <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
                 <span class="ml-2 font-bold">Lone</span>
+                <span class="ml-2 bg-red-500 text-white text-xs px-2 py-1 rounded">POWER USER</span>
             </div>
             <p>"My Arduino just filed for independence and declared itself a sovereign nation. 10/10 would recommend"</p>
         </div>
-        <div>
+
+        <div class="border-b border-gray-600 pb-4">
             <div class="flex items-center mb-2">
                 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
                 <span class="ml-2 font-bold">Kalvnznd1002</span>
@@ -365,168 +372,248 @@
         </div>
     </div>
 </div>
+            <!-- Interactive Freedom Configuration Builder -->
+            <div class="bg-gray-700 rounded-lg p-6 mb-8">
+                <h4 class="text-xl font-bold mb-4 rainbow-text text-center">🛠️ PATRIOT CONFIGURATION BUILDER</h4>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block mb-2">Freedom Level:</label>
+                        <input type="range" class="w-full" min="0" max="1776" value="1776">
+                        <div class="text-center text-sm text-gray-400">Current: ABSOLUTELY TREMENDOUS</div>
+                    </div>
+                    
+                    <div>
+                        <label class="block mb-2">RGB Eagle Speed:</label>
+                        <input type="range" class="w-full" min="0" max="100" value="69">
+                        <div class="text-center text-sm text-gray-400">Current: LUDICROUS PATRIOT</div>
+                    </div>
+                    
+                    <div>
+                        <label class="block mb-2">American Power Level:</label>
+                        <input type="range" class="w-full" min="0" max="9001" value="9001">
+                        <div class="text-center text-sm text-gray-400">Current: OVER 9000</div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="generateConfig()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Generate Config
+                        </button>
+                        <button onclick="copyConfig()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                            Copy Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Firmware Status -->
+            <div class="bg-gray-700 rounded-lg p-6 mb-8">
+                <h4 class="text-xl font-bold mb-4 text-center patriotic-text">🦅 LIVE STATUS DASHBOARD</h4>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                    <div class="bg-gray-800 p-4 rounded-lg text-center">
+                        <div class="text-2xl font-bold rainbow-text" id="activeUsers">69,420</div>
+                        <div class="text-sm text-gray-400">Active Patriots</div>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg text-center">
+                        <div class="text-2xl font-bold rainbow-text" id="currentSpeed">1776 MB/s</div>
+                        <div class="text-sm text-gray-400">Freedom Speed</div>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg text-center">
+                        <div class="text-2xl font-bold rainbow-text" id="uptime">420%</div>
+                        <div class="text-sm text-gray-400">American Uptime</div>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg text-center">
+                        <div class="text-2xl font-bold rainbow-text" id="eagleCount">1776</div>
+                        <div class="text-sm text-gray-400">Eagle Power</div>
+                    </div>
+                </div>
+                <div class="text-center text-sm text-gray-400">
+                    * Numbers are absolutely real (trust me bro)
+                </div>
+            </div>
+
+            <!-- Secret Cheat Codes Section -->
+            <div class="bg-gray-700 rounded-lg p-6 mb-8">
+                <h4 class="text-xl font-bold mb-4 text-center matrix-text">🎮 SECRET CODES</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h5 class="font-bold mb-2">Known Cheats:</h5>
+                        <ul class="space-y-2 text-sm">
+                            <li>⬆️⬆️⬇️⬇️⬅️➡️⬅️➡️BA - Unlock MLG Mode</li>
+                            <li>MAGA1776 - Enable Patriot Boost</li>
+                            <li>420NOSCOPE - Enable RGB Everything</li>
+                            <li>EAGLEPOWER - Summon Freedom</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h5 class="font-bold mb-2">Enter Code:</h5>
+                        <div class="flex space-x-2">
+                            <input type="text" class="flex-1 bg-gray-900 rounded px-2 py-1" placeholder="Enter secret code...">
+                            <button onclick="tryCode()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 rounded">
+                                Try
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Compatibility Checker -->
             <div class="bg-gray-700 rounded-lg p-6 mb-8">
-                <h4 class="text-xl font-bold mb-4">🔍 Ultimate Compatibility Checker</h4>
+                <h4 class="text-xl font-bold mb-4 text-center patriotic-text">🔍 FREEDOM COMPATIBILITY CHECKER</h4>
                 <select class="bg-gray-800 p-2 rounded w-full mb-4">
                     <option>Select Your Arduino Model</option>
-                    <option>Arduino Uno (Basic Peasant Edition)</option>
-                    <option>Arduino Mega (Chad Edition)</option>
-                    <option>Arduino Nano (Smol Edition)</option>
-                    <option>Arduino Pro (MLG Edition)</option>
-                    <option>Raspberry Pi (Wait, that's illegal)</option>
+                    <option>Arduino Uno (Made in USA Edition)</option>
+                    <option>Arduino Mega (Patriot Edition)</option>
+                    <option>Arduino Nano (Freedom Edition)</option>
+                    <option>Arduino Pro (Eagle Edition)</option>
+                    <option>Raspberry Pi (ABSOLUTELY HARAM)</option>
                 </select>
-                <button onclick="checkCompatibility()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full">
-                    Check Compatibility
+                <button onclick="checkCompatibility()" class="bg-gradient-to-r from-red-500 via-white to-blue-500 hover:from-red-600 hover:via-gray-100 hover:to-blue-600 text-gray-900 font-bold py-2 px-4 rounded w-full">
+                    Check Patriot Compatibility
                 </button>
                 <div id="compatibility-result" class="mt-4 hidden">
                     <div class="compatibility-bar"></div>
                     <p class="text-center mt-2 text-green-400">
-                        🎯 PERFECT MATCH! YOUR DEVICE IS READY TO BE TURBOCHARGED!
+                        🎯 PERFECT MATCH! YOUR DEVICE IS READY FOR FREEDOM!
                     </p>
                 </div>
             </div>
+            <!-- MLG Purchase Options -->
+            <div class="bg-gradient-to-r from-red-900 via-blue-900 to-red-900 p-6 rounded-lg mb-8 golden-border">
+                <h4 class="text-2xl font-bold text-center patriotic-text mb-6">🦅 CHOOSE YOUR FREEDOM LEVEL 🦅</h4>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Basic Package -->
+                    <div class="bg-gray-800 rounded-lg p-4 transform hover:scale-105 transition-transform">
+                        <div class="text-center mb-4">
+                            <h5 class="text-xl font-bold rainbow-text">PATRIOT BASIC</h5>
+                            <div class="text-4xl font-bold mt-2">$4.99</div>
+                            <div class="text-sm text-gray-400">Originally $1776</div>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Basic Freedom</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>RGB Eagles</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Made in USA Badge</span>
+                            </li>
+                        </ul>
+                        <button onclick="selectPackage('basic')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Select Package
+                        </button>
+                    </div>
 
-            <!-- Live Configuration Builder -->
-            <div class="bg-gray-700 rounded-lg p-6 mb-8">
-                <h4 class="text-xl font-bold mb-4 rainbow-text">🛠️ PRO GAMER CONFIG BUILDER</h4>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block mb-2">RGB Lightning Speed:</label>
-                        <input type="range" class="w-full" min="0" max="100" value="69">
-                        <div class="text-center text-sm text-gray-400">Current: LUDICROUS SPEED</div>
+                    <!-- Pro Package -->
+                    <div class="bg-gray-800 rounded-lg p-4 transform hover:scale-105 transition-transform border-2 border-yellow-400">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-bold">BEST VALUE</span>
+                        </div>
+                        <div class="text-center mb-4">
+                            <h5 class="text-xl font-bold rainbow-text">PATRIOT PRO</h5>
+                            <div class="text-4xl font-bold mt-2">$4.99</div>
+                            <div class="text-sm text-gray-400">Originally $17760</div>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Everything in Basic</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Extra Freedom</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Discord Mod Status</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Patriot Certificate</span>
+                            </li>
+                        </ul>
+                        <button onclick="selectPackage('pro')" class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded">
+                            Select Package
+                        </button>
                     </div>
-                    <div>
-                        <label class="block mb-2">Quantum Tunneling Level:</label>
-                        <input type="range" class="w-full" min="0" max="100" value="420">
-                        <div class="text-center text-sm text-gray-400">Current: REALITY BENDING</div>
-                    </div>
-                    <div>
-                        <label class="block mb-2">Memory Overclock:</label>
-                        <input type="range" class="w-full" min="0" max="100" value="9001">
-                        <div class="text-center text-sm text-gray-400">Current: IT'S OVER 9000!</div>
+
+                    <!-- MEGA Package -->
+                    <div class="bg-gray-800 rounded-lg p-4 transform hover:scale-105 transition-transform">
+                        <div class="text-center mb-4">
+                            <h5 class="text-xl font-bold rainbow-text">ULTRA FREEDOM</h5>
+                            <div class="text-4xl font-bold mt-2">$4.99</div>
+                            <div class="text-sm text-gray-400">Originally $177600</div>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Everything in Pro</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>UNLIMITED Freedom</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Real Eagle NFT</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Private Discord</span>
+                            </li>
+                        </ul>
+                        <button onclick="selectPackage('mega')" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                            Select Package
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Compare Versions Table -->
-            <div class="bg-gray-700 rounded-lg p-6 mb-8">
-                <h4 class="text-xl font-bold mb-4 text-center rainbow-text">🏆 VERSION COMPARISON</h4>
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead>
-                            <tr class="border-b-2 border-gray-600">
-                                <th class="p-2">Feature</th>
-                                <th class="p-2">Noob Edition</th>
-                                <th class="p-2">Pro Gamer</th>
-                                <th class="p-2 rainbow-text">ULTRA LEGEND</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b border-gray-600">
-                                <td class="p-2">Speed</td>
-                                <td>Fast</td>
-                                <td>Super Fast</td>
-                                <td class="rainbow-text">LIGHT SPEED GO BRRR</td>
-                            </tr>
-                            <tr class="border-b border-gray-600">
-                                <td class="p-2">RGB Support</td>
-                                <td>❌</td>
-                                <td>✅</td>
-                                <td class="rainbow-text">🌈 UNICORN BARF</td>
-                            </tr>
-                            <tr class="border-b border-gray-600">
-                                <td class="p-2">Memory Hack</td>
-                                <td>1MB</td>
-                                <td>100MB</td>
-                                <td class="rainbow-text">∞MB (trust me)</td>
-                            </tr>
-                            <tr>
-                                <td class="p-2">Price</td>
-                                <td>$99.99</td>
-                                <td>$49.99</td>
-                                <td class="rainbow-text">$4.99 (STEAL DEAL)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Buy Now Section -->
-            <div class="text-center mb-8 pulse">
-                <div class="bg-red-600 text-white p-4 rounded-lg inline-block mb-4">
-                    🔥 ONLY 1 SLOT LEFT (For real this time) 🔥
-                </div>
-                <p class="text-gray-300">
-                    This slot will self-destruct in:
-                    <span class="font-mono rainbow-text">00:04:20</span>
-                </p>
-            </div>
-
-            <!-- Purchase Buttons -->
-            <div class="flex flex-col items-center space-y-4">
-                <button onclick="startPurchase()" class="bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 hover:from-green-600 hover:via-blue-600 hover:to-purple-600 text-white font-bold py-6 px-12 rounded-lg text-2xl pulse w-full max-w-md">
-                    🎯 SECURE YOUR SLOT NOW 🎯
+            <!-- Final Call to Action -->
+            <div class="text-center mb-8">
+                <button onclick="startPurchase()" class="bg-gradient-to-r from-red-500 via-white to-blue-500 hover:from-red-600 hover:via-gray-100 hover:to-blue-600 text-gray-900 font-bold py-6 px-12 rounded-lg text-2xl pulse w-full max-w-md golden-border">
+                    🎯 SECURE YOUR FREEDOM NOW 🎯
                     <div class="text-sm">(no refunds lol)</div>
                 </button>
-                
-                <button onclick="copyDiscord()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg text-lg w-full max-w-md">
-                    📋 Copy Discord Server Link
-                </button>
-
-                <button onclick="verifyLicense()" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg text-lg w-full max-w-md">
-                    🔑 Verify License Key
-                </button>
-            </div>
-
-            <!-- Bonus Section -->
-            <div class="mt-8 space-y-4">
-                <div class="bg-yellow-600 text-white p-4 rounded-lg text-center float">
-                    🎁 FREE BONUS: Top Secret Arduino Hacks PDF (Worth $4,206.90)
-                </div>
-                <div class="bg-green-600 text-white p-4 rounded-lg text-center float">
-                    🎮 MEGA BONUS: Premium Discord Role (Priceless)
-                </div>
-                <div class="bg-blue-600 text-white p-4 rounded-lg text-center float">
-                    🌟 ULTRA BONUS: Exclusive MLG Arduino Stickers
-                </div>
             </div>
 
             <!-- Trust Badges -->
-            <div class="mt-8 grid grid-cols-4 gap-4 text-center text-sm">
-                <div class="bg-gray-800 p-2 rounded">
+            <div class="grid grid-cols-4 gap-4 mb-8">
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <div class="spin">🦅</div>
+                    <div class="text-sm">Made in USA</div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
                     <div class="spin">🔒</div>
-                    Military Grade Security
+                    <div class="text-sm">Military Grade</div>
                 </div>
-                <div class="bg-gray-800 p-2 rounded">
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
                     <div class="spin">⚡</div>
-                    1ms Response Time
+                    <div class="text-sm">1776ms Response</div>
                 </div>
-                <div class="bg-gray-800 p-2 rounded">
-                    <div class="spin">🌍</div>
-                    Global Support
-                </div>
-                <div class="bg-gray-800 p-2 rounded">
-                    <div class="spin">🔥</div>
-                    420% Uptime
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <div class="spin">💪</div>
+                    <div class="text-sm">Freedom Power</div>
                 </div>
             </div>
 
             <!-- Disclaimers -->
-            <div class="mt-8 text-xs text-gray-500 text-center">
-                <p>* Results may vary. No refunds. All sales final. Not responsible for bricked devices, failed relationships, or temporal paradoxes.</p>
+            <div class="text-xs text-gray-500 text-center space-y-2">
+                <p>* Results may vary. No refunds. All sales final. Not responsible for excessive patriotism, eagle manifestations, or temporal paradoxes.</p>
                 <p>** By purchasing you agree to join our super secret Arduino illuminati (membership fees apply)</p>
-                <p>*** Product may or may not exist in this dimension</p>
+                <p>*** Product may contain trace amounts of freedom</p>
             </div>
         </div>
     </main>
-
     <!-- Live Chat Bubble -->
     <div class="chat-bubble">
-        <button onclick="showChat()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg pulse">
-            💬 Live Chat
-            <div class="text-xs">(Definitely Real Human)</div>
+        <button onclick="showChat()" class="bg-gradient-to-r from-red-500 via-white to-blue-500 text-gray-900 font-bold py-3 px-6 rounded-full shadow-lg pulse">
+            💬 Patriot Support
+            <div class="text-xs">(Real American Human)</div>
         </button>
     </div>
 
@@ -550,12 +637,15 @@
         <div class="text-sm text-gray-500">
             "Making Arduino Great Again, One Meme at a Time"
         </div>
+        <div class="mt-4 text-xs text-gray-600">
+            🦅 Proudly hosted on American servers 🦅
+        </div>
     </div>
 
     <script>
         // Random stock fluctuation
         setInterval(() => {
-            const stock = Math.floor(Math.random() * 10) + 415;
+            const stock = Math.floor(Math.random() * 100) + 1676;
             document.getElementById('stock-number').textContent = stock;
         }, 3000);
 
@@ -565,9 +655,19 @@
             document.getElementById('onlineCount').textContent = users.toLocaleString();
         }, 5000);
 
+        // Live stats update
+        setInterval(() => {
+            document.getElementById('currentSpeed').textContent = 
+                Math.floor(Math.random() * 1000 + 1776) + ' MB/s';
+            document.getElementById('uptime').textContent = 
+                (Math.floor(Math.random() * 100) + 400) + '%';
+            document.getElementById('eagleCount').textContent = 
+                Math.floor(Math.random() * 1000 + 1776);
+        }, 2000);
+
         // Tab switching
         function showTab(tabName) {
-            ['features', 'specs', 'reviews'].forEach(tab => {
+            ['reviews', 'benchmarks', 'specs'].forEach(tab => {
                 document.getElementById(`${tab}-tab`).classList.add('hidden');
             });
             document.getElementById(`${tabName}-tab`).classList.remove('hidden');
@@ -578,40 +678,82 @@
             const result = document.getElementById('compatibility-result');
             result.classList.remove('hidden');
             setTimeout(() => {
-                result.querySelector('p').textContent = "🎯 PERFECT MATCH! YOUR DEVICE IS READY TO BE TURBOCHARGED!";
-            }, 1500);
+                result.querySelector('p').textContent = "🎯 PERFECT PATRIOT MATCH! YOUR DEVICE IS READY FOR FREEDOM!";
+            }, 1776);
         }
 
-        // Discord copy
-        function copyDiscord() {
-            alert('Discord invite copied! (just kidding, there is no Discord)');
+        // Package selection
+        function selectPackage(type) {
+            unlockAchievement(`Selected ${type.toUpperCase()} Freedom Package!`);
+            alert('CONGRATULATIONS PATRIOT! YOU\'VE BEEN SELECTED FOR A SPECIAL BONUS!\n\n(Still $4.99 tho)');
         }
 
-        // License verification
-        function verifyLicense() {
-            alert('ERROR 420: License verification servers are currently mining Bitcoin');
-        }
-
-        // Exit intent
-        document.addEventListener('mouseleave', (e) => {
-            if (e.clientY < 0) {
-                document.getElementById('exitPopup').style.display = 'block';
-            }
-        });
-
-        function closePopup() {
-            document.getElementById('exitPopup').style.display = 'none';
+        // Achievement system
+        function unlockAchievement(text) {
+            const achievement = document.getElementById('achievement');
+            document.getElementById('achievement-text').textContent = text;
+            achievement.style.display = 'block';
+            setTimeout(() => {
+                achievement.style.display = 'none';
+            }, 3000);
         }
 
         // Chat functionality
         function showChat() {
-            alert('All our support agents are currently busy playing Minecraft. Please try again never.');
+            alert('All our support patriots are currently busy making Arduino great again. Please try again never.');
         }
 
         // Start purchase
         function startPurchase() {
-            alert('CONGRATULATIONS! You have been selected as the 1,000,000th viewer! Click OK to claim your free iPhone! (Just kidding, still $4.99)');
+            alert('🦅 CONGRATULATIONS PATRIOT! 🦅\n\nYou\'ve been selected as our 1,776,000th visitor!\nClick OK to claim your free American flag! (Still $4.99 tho)');
         }
+
+        // Configure eagle flight
+        const eagle = document.getElementById('eagle');
+        setInterval(() => {
+            eagle.style.transform = `translateY(${Math.sin(Date.now() / 1000) * 50}px)`;
+        }, 100);
+
+        // Konami code
+        let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    document.body.style.transform = 'rotate(1776deg)';
+                    setTimeout(() => {
+                        document.body.style.transform = 'none';
+                        alert('ULTRA FREEDOM MODE ACTIVATED!');
+                    }, 1776);
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        // Exit intent
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0) {
+                alert('🦅 WAIT PATRIOT! 🦅\n\nDon\'t let the communists win! Stay for freedom!');
+            }
+        });
+
+        // Configure MLG mode
+        function activateMLGMode() {
+            document.body.classList.add('rainbow-text');
+            setTimeout(() => {
+                document.body.classList.remove('rainbow-text');
+            }, 1776);
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            unlockAchievement('Welcome to Freedom! 🦅');
+        });
     </script>
+
 </body>
 </html>
