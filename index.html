@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>🔥 SUPER PREMIUM Arduino Firmware (GONE WRONG) (GONE PRIVATE)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         @keyframes rainbow {
             0% { color: #ff0000; }
@@ -63,39 +64,97 @@
                 #000000 20%
             );
         }
-        .ascii-art {
-            font-family: monospace;
-            white-space: pre;
-            font-size: 12px;
-            line-height: 1;
-            color: #00ff00;
-            text-shadow: 0 0 5px #00ff00;
+        .chat-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .stock-counter {
+            transition: color 0.3s ease;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+        .compatibility-bar {
+            height: 20px;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            animation: loadBar 1.5s ease-in-out infinite;
+        }
+        @keyframes loadBar {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        .blink {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
     </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen">
+    <!-- Exit Intent Popup -->
+    <div id="exitPopup" class="modal">
+        <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 p-8 rounded-lg max-w-md">
+            <h2 class="text-2xl font-bold rainbow-text mb-4">🚨 WAIT! DON'T MISS OUT! 🚨</h2>
+            <p class="mb-4">Are you SURE you want to miss this ONCE IN A LIFETIME opportunity?</p>
+            <div class="diagonal-stripes p-4 rounded-lg mb-4">
+                <span class="text-xl font-bold">EXTRA SECRET BONUS: Free Pizza NFT!</span>
+            </div>
+            <button onclick="closePopup()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                Fine, take my money! 💸
+            </button>
+            <button onclick="closePopup()" class="mt-2 text-sm text-gray-400">
+                I hate money and success (Leave anyway)
+            </button>
+        </div>
+    </div>
+
+    <!-- Top Banner -->
     <div class="fixed top-0 left-0 right-0 overflow-hidden bg-red-600 text-white p-2 z-50">
         <div class="marquee whitespace-nowrap">
             🚨 SUPER PRIVATE LEAK - DON'T TELL ANYONE - ARDUINO ILLUMINATI DOESN'T WANT YOU TO SEE THIS - TOP SECRET FBI ARDUINO HACK - ABSOLUTELY NO COPYING ALLOWED (BUT HERE'S THE DOWNLOAD) 🚨
         </div>
     </div>
 
+    <!-- Navigation -->
     <nav class="bg-gray-800 p-4 mt-12">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold rainbow-text">🏴‍☠️ crump0rt.xyz</h1>
-            <div class="pulse">
-                <span class="bg-red-500 text-white px-2 py-1 rounded-full text-sm">
-                    👀 69,420 USERS ONLINE NOW!
-                </span>
+            <div class="flex items-center space-x-4">
+                <div id="stockCounter" class="pulse">
+                    <span class="bg-red-500 text-white px-2 py-1 rounded-full text-sm">
+                        👀 <span id="onlineCount">69,420</span> USERS ONLINE NOW!
+                    </span>
+                </div>
+                <div class="blink">
+                    <span class="bg-green-500 text-white px-2 py-1 rounded text-sm">
+                        🟢 Live Chat Available
+                    </span>
+                </div>
             </div>
         </div>
     </nav>
 
     <main class="container mx-auto px-4 py-8">
+        <!-- Main Product Section -->
         <div class="max-w-4xl mx-auto bg-gray-800 rounded-lg p-8 shadow-2xl">
+            <!-- Product Header -->
             <div class="text-center mb-8 float">
                 <div class="relative">
-                    <img src="/api/placeholder/400/300" alt="Arduino Firmware" class="mx-auto rounded-lg mb-6 opacity-75"/>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <img src="/api/placeholder/400/300" alt="Arduino Firmware" class="rounded-lg opacity-75"/>
+                        <img src="/api/placeholder/400/300" alt="Arduino Firmware Performance" class="rounded-lg opacity-75"/>
+                    </div>
                     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 bg-red-600 text-white px-8 py-2 text-xl font-bold">
                         LEAKED!!!
                     </div>
@@ -109,6 +168,30 @@
                 </p>
             </div>
 
+            <!-- Countdown Timer -->
+            <div class="bg-gray-700 p-4 rounded-lg mb-8 text-center">
+                <h3 class="text-xl mb-2">⏰ FLASH SALE ENDS IN:</h3>
+                <div class="grid grid-cols-4 gap-2 max-w-md mx-auto">
+                    <div class="bg-gray-800 p-2 rounded">
+                        <span id="hours" class="text-2xl font-bold rainbow-text">04</span>
+                        <div class="text-xs">HOURS</div>
+                    </div>
+                    <div class="bg-gray-800 p-2 rounded">
+                        <span id="minutes" class="text-2xl font-bold rainbow-text">20</span>
+                        <div class="text-xs">MINUTES</div>
+                    </div>
+                    <div class="bg-gray-800 p-2 rounded">
+                        <span id="seconds" class="text-2xl font-bold rainbow-text">69</span>
+                        <div class="text-xs">SECONDS</div>
+                    </div>
+                    <div class="bg-gray-800 p-2 rounded">
+                        <span id="milliseconds" class="text-2xl font-bold rainbow-text">420</span>
+                        <div class="text-xs">MS</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Section -->
             <div class="bg-gradient-to-r from-purple-900 via-purple-600 to-purple-900 rounded-lg p-6 mb-8">
                 <h3 class="text-2xl font-bold mb-4 text-center">
                     💾 PRIVATE FIRMWARE V69.420 – ULTRA RARE EDITION
@@ -130,34 +213,185 @@
                 </div>
 
                 <div class="diagonal-stripes text-white p-4 rounded-lg mb-6 shake">
-                    ⚡ FLASH SALE ENDS IN: 
-                    <span class="font-mono">69:42:00</span> 
-                    (TRUST ME BRO) ⚡
+                    ⚡ FLASH SALE ENDING SOON! ⚡
+                    <div id="remaining-stock" class="text-center font-bold">
+                        Only <span id="stock-number" class="rainbow-text">420</span> copies left!
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-gray-700 p-6 rounded-lg mb-8">
-                <h4 class="text-2xl text-center mb-4 rainbow-text">🏆 EPIC FEATURES 🏆</h4>
-                <ul class="space-y-4">
-                    <li class="flex items-center">
-                        <span class="spin">💯</span>
-                        <span class="ml-2">NO CAP Passthrough Technology</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="spin">🎮</span>
-                        <span class="ml-2">CRACKED Speed (Faster than Light)</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="spin">🔒</span>
-                        <span class="ml-2">PRIVATE Source (Trust me bro)</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="spin">🚀</span>
-                        <span class="ml-2">ZERO Ping (Actually Negative)</span>
-                    </li>
-                </ul>
+            <!-- Product Details Tabs -->
+            <div class="mb-8">
+                <div class="flex border-b border-gray-700">
+                    <button class="py-2 px-4 text-white bg-gray-700 rounded-t-lg mr-2" onclick="showTab('features')">Features</button>
+                    <button class="py-2 px-4 text-gray-400 hover:text-white" onclick="showTab('specs')">Specs</button>
+                    <button class="py-2 px-4 text-gray-400 hover:text-white" onclick="showTab('reviews')">Reviews</button>
+                </div>
+
+                <!-- Features Tab -->
+                <div id="features-tab" class="bg-gray-700 p-6 rounded-b-lg">
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <span class="spin">💯</span>
+                            <span class="ml-2">NO CAP Passthrough Technology</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="spin">🎮</span>
+                            <span class="ml-2">CRACKED Speed (Faster than Light)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="spin">🔒</span>
+                            <span class="ml-2">PRIVATE Source (Trust me bro)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="spin">🚀</span>
+                            <span class="ml-2">ZERO Ping (Actually Negative)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Specs Tab (hidden by default) -->
+                <div id="specs-tab" class="hidden bg-gray-700 p-6 rounded-b-lg">
+                    <table class="w-full">
+                        <tr class="border-b border-gray-600">
+                            <td class="py-2 font-bold">Version:</td>
+                            <td>V69.420 (Build 80085)</td>
+                        </tr>
+                        <tr class="border-b border-gray-600">
+                            <td class="py-2 font-bold">Compatibility:</td>
+                            <td>All Arduino boards (trust me bro)</td>
+                        </tr>
+                        <tr class="border-b border-gray-600">
+                            <td class="py-2 font-bold">Performance:</td>
+                            <td>9001% faster than stock</td>
+                        </tr>
+                        <tr class="border-b border-gray-600">
+                            <td class="py-2 font-bold">Security:</td>
+                            <td>Military Grade™ (probably)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 font-bold">Size:</td>
+                            <td>42.0 KB (nice)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Reviews Tab (hidden by default) -->
+                <div id="reviews-tab" class="hidden bg-gray-700 p-6 rounded-b-lg">
+                    <div class="space-y-4">
+                        <div class="border-b border-gray-600 pb-4">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                <span class="ml-2 font-bold">XxX_Pr0_H4ck3r_XxX</span>
+                            </div>
+                            <p>"This firmware made my Arduino so fast it traveled back in time and prevented my parents' divorce"</p>
+                        </div>
+                        <div class="border-b border-gray-600 pb-4">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                <span class="ml-2 font-bold">ArduinoMemer420</span>
+                            </div>
+                            <p>"My Arduino now mines Bitcoin and has achieved consciousness. 10/10 would flash again"</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                <span class="ml-2 font-bold">TotallyRealCustomer</span>
+                            </div>
+                            <p>"Finally, my Arduino can run Crysis at 4K 144fps. NASA wants to know my location!"</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <!-- Compatibility Checker -->
+            <div class="bg-gray-700 rounded-lg p-6 mb-8">
+                <h4 class="text-xl font-bold mb-4">🔍 Ultimate Compatibility Checker</h4>
+                <select class="bg-gray-800 p-2 rounded w-full mb-4">
+                    <option>Select Your Arduino Model</option>
+                    <option>Arduino Uno (Basic Peasant Edition)</option>
+                    <option>Arduino Mega (Chad Edition)</option>
+                    <option>Arduino Nano (Smol Edition)</option>
+                    <option>Arduino Pro (MLG Edition)</option>
+                    <option>Raspberry Pi (Wait, that's illegal)</option>
+                </select>
+                <button onclick="checkCompatibility()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full">
+                    Check Compatibility
+                </button>
+                <div id="compatibility-result" class="mt-4 hidden">
+                    <div class="compatibility-bar"></div>
+                    <p class="text-center mt-2 text-green-400">
+                        🎯 PERFECT MATCH! YOUR DEVICE IS READY TO BE TURBOCHARGED!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Live Configuration Builder -->
+            <div class="bg-gray-700 rounded-lg p-6 mb-8">
+                <h4 class="text-xl font-bold mb-4 rainbow-text">🛠️ PRO GAMER CONFIG BUILDER</h4>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block mb-2">RGB Lightning Speed:</label>
+                        <input type="range" class="w-full" min="0" max="100" value="69">
+                        <div class="text-center text-sm text-gray-400">Current: LUDICROUS SPEED</div>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Quantum Tunneling Level:</label>
+                        <input type="range" class="w-full" min="0" max="100" value="420">
+                        <div class="text-center text-sm text-gray-400">Current: REALITY BENDING</div>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Memory Overclock:</label>
+                        <input type="range" class="w-full" min="0" max="100" value="9001">
+                        <div class="text-center text-sm text-gray-400">Current: IT'S OVER 9000!</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compare Versions Table -->
+            <div class="bg-gray-700 rounded-lg p-6 mb-8">
+                <h4 class="text-xl font-bold mb-4 text-center rainbow-text">🏆 VERSION COMPARISON</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b-2 border-gray-600">
+                                <th class="p-2">Feature</th>
+                                <th class="p-2">Noob Edition</th>
+                                <th class="p-2">Pro Gamer</th>
+                                <th class="p-2 rainbow-text">ULTRA LEGEND</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-600">
+                                <td class="p-2">Speed</td>
+                                <td>Fast</td>
+                                <td>Super Fast</td>
+                                <td class="rainbow-text">LIGHT SPEED GO BRRR</td>
+                            </tr>
+                            <tr class="border-b border-gray-600">
+                                <td class="p-2">RGB Support</td>
+                                <td>❌</td>
+                                <td>✅</td>
+                                <td class="rainbow-text">🌈 UNICORN BARF</td>
+                            </tr>
+                            <tr class="border-b border-gray-600">
+                                <td class="p-2">Memory Hack</td>
+                                <td>1MB</td>
+                                <td>100MB</td>
+                                <td class="rainbow-text">∞MB (trust me)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">Price</td>
+                                <td>$99.99</td>
+                                <td>$49.99</td>
+                                <td class="rainbow-text">$4.99 (STEAL DEAL)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Buy Now Section -->
             <div class="text-center mb-8 pulse">
                 <div class="bg-red-600 text-white p-4 rounded-lg inline-block mb-4">
                     🔥 ONLY 1 SLOT LEFT (For real this time) 🔥
@@ -168,13 +402,23 @@
                 </p>
             </div>
 
-            <div class="flex justify-center">
-                <button class="bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 hover:from-green-600 hover:via-blue-600 hover:to-purple-600 text-white font-bold py-6 px-12 rounded-lg text-2xl pulse">
+            <!-- Purchase Buttons -->
+            <div class="flex flex-col items-center space-y-4">
+                <button onclick="startPurchase()" class="bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 hover:from-green-600 hover:via-blue-600 hover:to-purple-600 text-white font-bold py-6 px-12 rounded-lg text-2xl pulse w-full max-w-md">
                     🎯 SECURE YOUR SLOT NOW 🎯
                     <div class="text-sm">(no refunds lol)</div>
                 </button>
+                
+                <button onclick="copyDiscord()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg text-lg w-full max-w-md">
+                    📋 Copy Discord Server Link
+                </button>
+
+                <button onclick="verifyLicense()" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg text-lg w-full max-w-md">
+                    🔑 Verify License Key
+                </button>
             </div>
 
+            <!-- Bonus Section -->
             <div class="mt-8 space-y-4">
                 <div class="bg-yellow-600 text-white p-4 rounded-lg text-center float">
                     🎁 FREE BONUS: Top Secret Arduino Hacks PDF (Worth $4,206.90)
@@ -182,15 +426,49 @@
                 <div class="bg-green-600 text-white p-4 rounded-lg text-center float">
                     🎮 MEGA BONUS: Premium Discord Role (Priceless)
                 </div>
+                <div class="bg-blue-600 text-white p-4 rounded-lg text-center float">
+                    🌟 ULTRA BONUS: Exclusive MLG Arduino Stickers
+                </div>
             </div>
 
+            <!-- Trust Badges -->
+            <div class="mt-8 grid grid-cols-4 gap-4 text-center text-sm">
+                <div class="bg-gray-800 p-2 rounded">
+                    <div class="spin">🔒</div>
+                    Military Grade Security
+                </div>
+                <div class="bg-gray-800 p-2 rounded">
+                    <div class="spin">⚡</div>
+                    1ms Response Time
+                </div>
+                <div class="bg-gray-800 p-2 rounded">
+                    <div class="spin">🌍</div>
+                    Global Support
+                </div>
+                <div class="bg-gray-800 p-2 rounded">
+                    <div class="spin">🔥</div>
+                    420% Uptime
+                </div>
+            </div>
+
+            <!-- Disclaimers -->
             <div class="mt-8 text-xs text-gray-500 text-center">
                 <p>* Results may vary. No refunds. All sales final. Not responsible for bricked devices, failed relationships, or temporal paradoxes.</p>
                 <p>** By purchasing you agree to join our super secret Arduino illuminati (membership fees apply)</p>
+                <p>*** Product may or may not exist in this dimension</p>
             </div>
         </div>
     </main>
 
+    <!-- Live Chat Bubble -->
+    <div class="chat-bubble">
+        <button onclick="showChat()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg pulse">
+            💬 Live Chat
+            <div class="text-xs">(Definitely Real Human)</div>
+        </button>
+    </div>
+
+    <!-- Footer -->
     <div class="bg-black p-8 text-center mt-8">
         <div class="ascii-art mb-4">
            ▄████▄   ██▀███   █    ██  ███▄ ▄███▓ ██▓███   ▒█████   ██▀███  ▄▄▄█████▓
@@ -212,14 +490,66 @@
         </div>
     </div>
 
-    <footer class="bg-gray-800 p-4">
-        <div class="container mx-auto text-center text-gray-400">
-            <p>© 2024 crump0rt.xyz - Definitely Not a Meme™</p>
-            <p class="text-xs mt-2">This site is protected by advanced Arduino security (trust me bro)</p>
-            <div class="mt-4 text-sm">
-                <span class="rainbow-text">💫 0rt/crumpette's Secret Laboratory 💫</span>
-            </div>
-        </div>
-    </footer>
+    <script>
+        // Random stock fluctuation
+        setInterval(() => {
+            const stock = Math.floor(Math.random() * 10) + 415;
+            document.getElementById('stock-number').textContent = stock;
+        }, 3000);
+
+        // Random online user count
+        setInterval(() => {
+            const users = Math.floor(Math.random() * 1000) + 68500;
+            document.getElementById('onlineCount').textContent = users.toLocaleString();
+        }, 5000);
+
+        // Tab switching
+        function showTab(tabName) {
+            ['features', 'specs', 'reviews'].forEach(tab => {
+                document.getElementById(`${tab}-tab`).classList.add('hidden');
+            });
+            document.getElementById(`${tabName}-tab`).classList.remove('hidden');
+        }
+
+        // Compatibility checker
+        function checkCompatibility() {
+            const result = document.getElementById('compatibility-result');
+            result.classList.remove('hidden');
+            setTimeout(() => {
+                result.querySelector('p').textContent = "🎯 PERFECT MATCH! YOUR DEVICE IS READY TO BE TURBOCHARGED!";
+            }, 1500);
+        }
+
+        // Discord copy
+        function copyDiscord() {
+            alert('Discord invite copied! (just kidding, there is no Discord)');
+        }
+
+        // License verification
+        function verifyLicense() {
+            alert('ERROR 420: License verification servers are currently mining Bitcoin');
+        }
+
+        // Exit intent
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0) {
+                document.getElementById('exitPopup').style.display = 'block';
+            }
+        });
+
+        function closePopup() {
+            document.getElementById('exitPopup').style.display = 'none';
+        }
+
+        // Chat functionality
+        function showChat() {
+            alert('All our support agents are currently busy playing Minecraft. Please try again never.');
+        }
+
+        // Start purchase
+        function startPurchase() {
+            alert('CONGRATULATIONS! You have been selected as the 1,000,000th viewer! Click OK to claim your free iPhone! (Just kidding, still $4.99)');
+        }
+    </script>
 </body>
 </html>
