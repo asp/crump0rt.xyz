@@ -247,33 +247,34 @@
             </div>
 
             <div class="bg-gray-700 p-6 rounded-lg mb-8">
-                <h4 class="text-2xl text-center mb-4 patriotic-text">🏆 PREMIUM FEATURES 🏆</h4>
-                <ul class="space-y-4">
-                    <li class="flex items-center">
-                        <span class="spin">🎯</span>
-                        <span class="ml-2">Perfect full pass-through technology</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="spin">🛡️</span>
-                        <span class="ml-2">Zero detection vectors</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="spin">🖱️</span>
-                        <span class="ml-2">Large mouse compatibility</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="spin">⚙️</span>
-                        <span class="ml-2">Custom API for more control</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="spin">🔌</span>
-                        <span class="ml-2">Firmware comes pre-flashed for plug-and-play operation</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="spin">⚡</span>
-                        <span class="ml-2">Supports up to 8k polling rate</span>
-                    </li>
-                </ul>
+                <h4 class="text-2xl text-center mb-4 patriotic-text">🏆 ABOUT FERRUM X 🏆</h4>
+                <p class="mb-4">Ferrum is input manipulation hardware similar to a Kmbox that supports up to 8k polling and your mouse's software. It uses all standard commands that a Kmbox B+ Pro, so it is a drop-in replacement and works with all current software. We also provide our custom API for developers who want more control.</p>
+                
+                <h5 class="text-xl font-bold mt-6 mb-3">What Makes Ferrum Special?</h5>
+                <p class="mb-4">Ferrum offers perfect full passthrough of your current device to your main computer. This makes your main PC see the mouse as directly plugged in. This removes any chance of software on your computer finding the device. With our full passthrough, you can use any feature of your actual device, including manufacturer software (ex. synapse, ghub, xpanel, etc). Our high-end hardware and software combo also supports high-speed devices, meaning you can use your mouse at its full potential and reach 8k polling.</p>
+                
+                <h5 class="text-xl font-bold mt-6 mb-3">How Is Ferrum Better Than Competitors?</h5>
+                <p class="mb-4">MAKCM, KMBox, all Arduino-based solutions, and almost all other products on the market don't support USB 2.0 emulation due to hardware limitations. This means they cannot show up as high speed devices when you view the descriptors. This means devices supporting polling rates above 1KHz, even on a 1KHz mode, cannot be safely used with passthrough.</p>
+                
+                <p class="mb-4">However, Ferrum has the hardware to support safe passthrough of all devices. The most significant advantage Ferrum has is well-designed firmware. Very few (if any) developers on the market take time to learn how USB actually works. They opt to use pre-existing libraries with code they didn't write (and usually don't understand), leaving room for unexpected behavior and detections.</p>
+                
+                <p class="mb-4">Ferrum was designed from the ground up with its custom-embedded USB drivers, meaning all code and the underlying behavior are personally written and understood. This puts it ahead of all other solutions in terms of undetectability.</p>
+                
+                <p class="mb-4">MAKCM does not offer passthrough currently. Instead, they enumerate the device to mimic all the descriptors. If you try to use a manufacturer's software, it will not work. This approach has a lot of potential detection vectors and thus risks future ban waves.</p>
+                
+                <h5 class="text-xl font-bold mt-6 mb-3">How Much Latency Does Ferrum Add?</h5>
+                <p class="mb-4">The simple answer is that at 1000Hz it adds 0.6ms of latency, and with 8000Hz it adds 0.14ms.</p>
+                
+                <h5 class="text-xl font-bold mt-6 mb-3">Release Date and Price</h5>
+                <p class="mb-4">We were initially going to release Ferrum in late December 2024, but due to problems with a factory, we had to find a new one. Due to this delay, we made more modifications to the design to provide the best product. We are looking to release the product around mid February, shipping end of February.</p>
+                
+                <p class="mb-4">Ferrum will be released between $100 to $150; we do not have an exact price yet. We realize this is very expensive, but this is to offset the development costs and ensure we are providing the best hardware. This device is meant to be endgame, meaning you will never have to replace it. Because of this, the price is justified.</p>
+                
+                <h5 class="text-xl font-bold mt-6 mb-3">Controller Support</h5>
+                <p class="mb-4">We are currently working on having controller support for the release. There are no promises of it happening, as many other aspects of the project take temporary priority. If it does not come on release, we plan on releasing it in a future update.</p>
+                
+                <h5 class="text-xl font-bold mt-6 mb-3">Reseller Information</h5>
+                <p class="mb-4">As we get closer to release, we will open up tickets for resellers to reach out and have a reseller plan.</p>
             </div>
 
             <div id="input-output" class="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 p-6 rounded-lg mb-8 golden-border">
@@ -297,51 +298,11 @@
                 </div>
             </div>
 
-            <div id="reviews-tab" class="bg-gray-700 p-6 rounded-b-lg mb-8">
-                <h4 class="text-2xl text-center mb-4 patriotic-text">🏆 GAMER REVIEWS 🏆</h4>
-                <div class="space-y-4">
-                    <div class="border-b border-gray-600 pb-4">
-                        <div class="flex items-center mb-2">
-                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            <span class="ml-2 font-bold">ProAimGamer</span>
-                            <span class="ml-2 bg-red-500 text-white text-xs px-2 py-1 rounded">VERIFIED PURCHASE</span>
-                        </div>
-                        <p>"This device is absolutely insane! Perfect passthrough, no lag, works flawlessly with my setup. Huge upgrade from my old equipment."</p>
-                    </div>
-
-                    <div class="border-b border-gray-600 pb-4">
-                        <div class="flex items-center mb-2">
-                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            <span class="ml-2 font-bold">HeadshotKing</span>
-                        </div>
-                        <p>"Upgraded from a Kmbox B+ Pro and the difference is night and day. Zero detection issues, plug and play, and my mouse feels smoother than ever."</p>
-                    </div>
-
-                    <div class="border-b border-gray-600 pb-4">
-                        <div class="flex items-center mb-2">
-                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            <span class="ml-2 font-bold">TournamentPlayer</span>
-                            <span class="ml-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">PRO GAMER</span>
-                        </div>
-                        <p>"The custom API gives me so much more control. I can fine-tune everything exactly how I want it. Well worth the investment."</p>
-                    </div>
-
-                    <div class="border-b border-gray-600 pb-4">
-                        <div class="flex items-center mb-2">
-                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            <span class="ml-2 font-bold">PrecisionAimer</span>
-                        </div>
-                        <p>"Finally hardware that actually delivers on its promises. The 8k polling support is fantastic, and it works with all my custom settings."</p>
-                    </div>
-
-                    <div class="border-b border-gray-600 pb-4">
-                        <div class="flex items-center mb-2">
-                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            <span class="ml-2 font-bold">CompetitiveEdge</span>
-                            <span class="ml-2 bg-red-500 text-white text-xs px-2 py-1 rounded">TOP REVIEWER</span>
-                        </div>
-                        <p>"Tried every device on the market and Ferrum X is hands down the best. Completely undetectable and the passthrough quality is unmatched."</p>
-                    </div>
+                        <div id="pro-gamer-endorsement" class="bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600 p-6 rounded-lg mb-8 golden-border">
+                <div class="text-center space-y-4">
+                    <h3 class="text-2xl font-bold rainbow-text">PRO GAMER ENDORSEMENT!</h3>
+                    <p class="italic">"After switching to Ferrum X, I've seen a massive improvement in my gameplay. The perfect passthrough and zero detection make this device unmatched in the market. No more input lag or software compatibility issues!"</p>
+                    <p class="text-sm">- Professional Esports Player</p>
                 </div>
             </div>
 
