@@ -77,6 +77,16 @@
             border: 3px solid #ffd700;
             box-shadow: 0 0 10px #ffd700;
         }
+        .steel-gradient {
+            background: linear-gradient(45deg, #333333, #666666, #999999, #666666, #333333);
+            background-size: 400% 400%;
+            animation: steel-shine 3s ease infinite;
+        }
+        @keyframes steel-shine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
         .presidential-bg {
             background: linear-gradient(45deg, #002868 25%, #bf0a30 25%, #bf0a30 50%, #002868 50%, #002868 75%, #bf0a30 75%, #bf0a30);
             background-size: 4px 4px;
@@ -129,16 +139,6 @@
             right: 20px;
             z-index: 1000;
         }
-        .steel-gradient {
-            background: linear-gradient(45deg, #333333, #666666, #999999, #666666, #333333);
-            background-size: 400% 400%;
-            animation: steel-shine 3s ease infinite;
-        }
-        @keyframes steel-shine {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
     </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen">
@@ -187,18 +187,8 @@
             <div class="text-center mb-8 float">
                 <div class="relative">
                     <div class="grid grid-cols-2 gap-4 mb-6">
-                        <div class="relative">
-                            <img src="/api/placeholder/400/300" alt="Ferrum X Hardware" class="rounded-lg opacity-0 golden-border"/>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <img src="https://i.imgur.com/dHETjPV.jpg" alt="Ferrum X Hardware - External Case" class="max-w-full max-h-full rounded-lg golden-border"/>
-                            </div>
-                        </div>
-                        <div class="relative">
-                            <img src="/api/placeholder/400/300" alt="Ferrum X Internal Board" class="rounded-lg opacity-0 golden-border"/>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <img src="https://i.imgur.com/6vwSPcq.jpg" alt="Ferrum X Internal Circuit Board" class="max-w-full max-h-full rounded-lg golden-border"/>
-                            </div>
-                        </div>
+                        <img src="Discord_6YSQ4rVRtE.png" alt="Ferrum X Hardware - External Case" class="rounded-lg golden-border"/>
+                        <img src="Discord_58ByShX4ZX.png" alt="Ferrum X Internal Circuit Board" class="rounded-lg golden-border"/>
                     </div>
                     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 bg-red-600 text-white px-8 py-2 text-xl font-bold">
                         NEXT GEN!
@@ -216,34 +206,6 @@
                     💫 ZERO DETECTION - PERFECT PASSTHROUGH - 8K POLLING 💫
                 </p>
                 <div class="text-sm text-gray-400">*Results may vary based on skill level</div>
-            </div>
-
-            <div class="bg-gradient-to-r from-gray-700 via-gray-900 to-gray-700 rounded-lg p-6 mb-8">
-                <div class="text-center mb-4">
-                    <span class="patriotic-text text-3xl font-bold">🎯 DROP-IN REPLACEMENT FOR KMBOX B+ PRO 🎯</span>
-                </div>
-                
-                <div class="flex flex-col items-center space-y-4 mb-6">
-                    <div class="transform rotate-12">
-                        <span class="text-gray-400 line-through text-4xl">$299.99</span>
-                    </div>
-                    <div class="transform -rotate-12">
-                        <span class="text-gray-400 line-through text-3xl">$199.99</span>
-                    </div>
-                    <div class="transform rotate-6">
-                        <span class="text-gray-400 line-through text-2xl">$149.99</span>
-                    </div>
-                    <div class="pulse">
-                        <span class="text-green-400 text-6xl font-bold">$99.99</span>
-                    </div>
-                </div>
-
-                <div class="star-spangled text-white p-4 rounded-lg mb-6 shake">
-                    ⚡ LIMITED TIME OFFER - ACT FAST! ⚡
-                    <div id="remaining-stock" class="text-center font-bold">
-                        Only <span id="stock-number" class="rainbow-text">187</span> units left!
-                    </div>
-                </div>
             </div>
 
             <div class="bg-gray-700 p-6 rounded-lg mb-8">
@@ -277,65 +239,41 @@
                 <p class="mb-4">As we get closer to release, we will open up tickets for resellers to reach out and have a reseller plan.</p>
             </div>
 
-            <div id="input-output" class="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 p-6 rounded-lg mb-8 golden-border">
-                <div class="text-center space-y-4">
-                    <h3 class="text-2xl font-bold rainbow-text">I/O SPECIFICATIONS</h3>
-                    <ul class="space-y-4 text-left">
-                        <li class="flex items-center">
-                            <span class="text-blue-400 mr-2">►</span>
-                            <span>Mouse Input: 1x USB A</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-blue-400 mr-2">►</span>
-                            <span>1st PC Output: 1x USB C</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-blue-400 mr-2">►</span>
-                            <span>2nd PC Input: 1x USB C</span>
-                        </li>
-                    </ul>
-                    <p class="text-xl mt-4">Included in box: 1x Ferrum X only</p>
-                </div>
+            <div class="bg-gray-700 p-6 rounded-lg mb-8">
+                <h4 class="text-2xl text-center mb-4 patriotic-text">🏆 PREMIUM FEATURES 🏆</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-center">
+                        <span class="spin">🎯</span>
+                        <span class="ml-2">Perfect full pass-through technology</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="spin">🛡️</span>
+                        <span class="ml-2">Zero detection vectors</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="spin">🖱️</span>
+                        <span class="ml-2">Large mouse compatibility</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="spin">⚙️</span>
+                        <span class="ml-2">Custom API for more control</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="spin">🔌</span>
+                        <span class="ml-2">Firmware comes pre-flashed for plug-and-play operation</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="spin">⚡</span>
+                        <span class="ml-2">Supports up to 8k polling rate</span>
+                    </li>
+                </ul>
             </div>
 
-                        <div id="pro-gamer-endorsement" class="bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600 p-6 rounded-lg mb-8 golden-border">
+            <div id="pro-gamer-endorsement" class="bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600 p-6 rounded-lg mb-8 golden-border">
                 <div class="text-center space-y-4">
                     <h3 class="text-2xl font-bold rainbow-text">PRO GAMER ENDORSEMENT!</h3>
                     <p class="italic">"After switching to Ferrum X, I've seen a massive improvement in my gameplay. The perfect passthrough and zero detection make this device unmatched in the market. No more input lag or software compatibility issues!"</p>
                     <p class="text-sm">- Professional Esports Player</p>
-                </div>
-            </div>
-
-            <!-- Features Configuration -->
-            <div class="bg-gray-700 rounded-lg p-6 mb-8">
-                <h4 class="text-xl font-bold mb-4 rainbow-text text-center">⚙️ DEVICE CONFIGURATION</h4>
-                <div class="space-y-6">
-                    <div>
-                        <label class="block mb-2">Polling Rate:</label>
-                        <input type="range" class="w-full" min="1000" max="8000" value="8000" step="1000">
-                        <div class="text-center text-sm text-gray-400">Current: 8000Hz (Maximum)</div>
-                    </div>
-                    
-                    <div>
-                        <label class="block mb-2">Response Time:</label>
-                        <input type="range" class="w-full" min="0" max="100" value="1">
-                        <div class="text-center text-sm text-gray-400">Current: 1ms (Optimal)</div>
-                    </div>
-                    
-                    <div>
-                        <label class="block mb-2">Passthrough Quality:</label>
-                        <input type="range" class="w-full" min="0" max="100" value="100">
-                        <div class="text-center text-sm text-gray-400">Current: 100% (Perfect)</div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <button onclick="generateConfig()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Generate Config
-                        </button>
-                        <button onclick="copyConfig()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                            Copy Settings
-                        </button>
-                    </div>
                 </div>
             </div>
 
@@ -344,7 +282,7 @@
                 <h4 class="text-xl font-bold mb-4 text-center patriotic-text">⚙️ FERRUM UTILITY SOFTWARE</h4>
                 <div class="grid grid-cols-1 gap-4 mb-4">
                     <div class="bg-gray-800 p-4 rounded-lg text-center">
-                        <img src="https://i.imgur.com/h9n4Mhu.png" alt="Ferrum Utility Software Interface" class="mx-auto rounded-lg mb-3 max-w-full" />
+                        <img src="Discord_U0uWOppUwL.png" alt="Ferrum Utility Software Interface" class="mx-auto rounded-lg mb-3 max-w-full" />
                         <div class="text-sm text-gray-400">Advanced configuration utility with plug-and-play detection</div>
                     </div>
                 </div>
@@ -354,144 +292,128 @@
                         <div class="text-sm text-gray-400">Active Users</div>
                     </div>
                     <div class="bg-gray-800 p-4 rounded-lg text-center">
-                        <div class="text-2xl font-bold rainbow-text" id="currentSpeed">0.5ms</div>
+                        <div class="text-2xl font-bold rainbow-text" id="currentSpeedDisplay">0.5ms</div>
                         <div class="text-sm text-gray-400">Response Time</div>
                     </div>
                     <div class="bg-gray-800 p-4 rounded-lg text-center">
-                        <div class="text-2xl font-bold rainbow-text" id="uptime">99.99%</div>
+                        <div class="text-2xl font-bold rainbow-text" id="uptimeDisplay">99.99%</div>
                         <div class="text-sm text-gray-400">Uptime</div>
                     </div>
                     <div class="bg-gray-800 p-4 rounded-lg text-center">
-                        <div class="text-2xl font-bold rainbow-text" id="detectionRate">0%</div>
+                        <div class="text-2xl font-bold rainbow-text" id="detectionRateDisplay">0%</div>
                         <div class="text-sm text-gray-400">Detection Rate</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Compatibility Checker -->
-            <div class="bg-gray-700 rounded-lg p-6 mb-8">
-                <h4 class="text-xl font-bold mb-4 text-center patriotic-text">🔍 COMPATIBILITY CHECKER</h4>
-                <select class="bg-gray-800 p-2 rounded w-full mb-4">
-                    <option>Select Your Mouse Model</option>
-                    <option>Logitech G Pro X Superlight</option>
-                    <option>Razer DeathAdder V3 Pro</option>
-                    <option>Glorious Model O</option>
-                    <option>SteelSeries Prime</option>
-                    <option>Zowie EC2</option>
-                    <option>HyperX Pulsefire Haste</option>
-                </select>
-                <button onclick="checkCompatibility()" class="bg-gradient-to-r from-gray-500 via-gray-600 to-gray-500 hover:from-gray-600 hover:via-gray-700 hover:to-gray-600 text-white font-bold py-2 px-4 rounded w-full">
-                    Check Compatibility
-                </button>
-                <div id="compatibility-result" class="mt-4 hidden">
-                    <div class="compatibility-bar"></div>
-                    <p class="text-center mt-2 text-green-400">
-                        🎯 PERFECT MATCH! YOUR DEVICE IS COMPATIBLE!
-                    </p>
-                </div>
-            </div>
-
-            <!-- Package Options -->
-            <div class="bg-gradient-to-r from-gray-700 via-gray-900 to-gray-700 p-6 rounded-lg mb-8 golden-border">
-                <h4 class="text-2xl font-bold text-center patriotic-text mb-6">🎮 CHOOSE YOUR PACKAGE 🎮</h4>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Standard Package -->
-                    <div class="bg-gray-800 rounded-lg p-4 transform hover:scale-105 transition-transform">
-                        <div class="text-center mb-4">
-                            <h5 class="text-xl font-bold rainbow-text">STANDARD</h5>
-                            <div class="text-4xl font-bold mt-2">$99.99</div>
-                            <div class="text-sm text-gray-400">Originally $149.99</div>
+            <div id="reviews-tab" class="bg-gray-700 p-6 rounded-b-lg mb-8">
+                <h4 class="text-2xl text-center mb-4 patriotic-text">🏆 GAMER REVIEWS 🏆</h4>
+                <div class="space-y-4">
+                    <div class="border-b border-gray-600 pb-4">
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            <span class="ml-2 font-bold">ProAimGamer</span>
+                            <span class="ml-2 bg-red-500 text-white text-xs px-2 py-1 rounded">VERIFIED PURCHASE</span>
                         </div>
-                        <ul class="space-y-2 mb-4">
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>Ferrum X Device</span>
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>Basic Config Access</span>
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>30-Day Support</span>
-                            </li>
-                        </ul>
-                        <button onclick="selectPackage('standard')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Select Package
-                        </button>
+                        <p>"This device is absolutely insane! Perfect passthrough, no lag, works flawlessly with my setup. Huge upgrade from my old equipment."</p>
                     </div>
 
-                    <!-- Pro Package -->
-                    <div class="bg-gray-800 rounded-lg p-4 transform hover:scale-105 transition-transform border-2 border-yellow-400">
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                            <span class="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-bold">BEST VALUE</span>
+                    <div class="border-b border-gray-600 pb-4">
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            <span class="ml-2 font-bold">HeadshotKing</span>
                         </div>
-                        <div class="text-center mb-4">
-                            <h5 class="text-xl font-bold rainbow-text">PRO</h5>
-                            <div class="text-4xl font-bold mt-2">$149.99</div>
-                            <div class="text-sm text-gray-400">Originally $199.99</div>
-                        </div>
-                        <ul class="space-y-2 mb-4">
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>Everything in Standard</span>
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>Advanced API Access</span>
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>Priority Support</span>
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>Premium Config Profiles</span>
-                            </li>
-                        </ul>
-                        <button onclick="selectPackage('pro')" class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded">
-                            Select Package
-                        </button>
+                        <p>"Upgraded from a Kmbox B+ Pro and the difference is night and day. Zero detection issues, plug and play, and my mouse feels smoother than ever."</p>
                     </div>
 
-                    <!-- Elite Package -->
-                    <div class="bg-gray-800 rounded-lg p-4 transform hover:scale-105 transition-transform">
-                        <div class="text-center mb-4">
-                            <h5 class="text-xl font-bold rainbow-text">ELITE</h5>
-                            <div class="text-4xl font-bold mt-2">$199.99</div>
-                            <div class="text-sm text-gray-400">Originally $299.99</div>
+                    <div class="border-b border-gray-600 pb-4">
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            <span class="ml-2 font-bold">TournamentPlayer</span>
+                            <span class="ml-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">PRO GAMER</span>
                         </div>
-                        <ul class="space-y-2 mb-4">
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>Everything in Pro</span>
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>Lifetime Updates</span>
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>Direct Developer Access</span>
-                            </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">✓</span>
-                                <span>VIP Discord Access</span>
-                            </li>
-                        </ul>
-                        <button onclick="selectPackage('elite')" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                            Select Package
-                        </button>
+                        <p>"The custom API gives me so much more control. I can fine-tune everything exactly how I want it. Well worth the investment."</p>
+                    </div>
+
+                    <div class="border-b border-gray-600 pb-4">
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            <span class="ml-2 font-bold">PrecisionAimer</span>
+                        </div>
+                        <p>"Finally hardware that actually delivers on its promises. The 8k polling support is fantastic, and it works with all my custom settings."</p>
+                    </div>
+
+                    <div class="border-b border-gray-600 pb-4">
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            <span class="ml-2 font-bold">CompetitiveEdge</span>
+                            <span class="ml-2 bg-red-500 text-white text-xs px-2 py-1 rounded">TOP REVIEWER</span>
+                        </div>
+                        <p>"Tried every device on the market and Ferrum X is hands down the best. Completely undetectable and the passthrough quality is unmatched."</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Final Call to Action -->
-            <div class="text-center mb-8">
-                <button onclick="startPurchase()" class="bg-gradient-to-r from-gray-500 via-gray-600 to-gray-500 hover:from-gray-600 hover:via-gray-700 hover:to-gray-600 text-white font-bold py-6 px-12 rounded-lg text-2xl pulse w-full max-w-md golden-border">
-                    🎯 ORDER YOUR FERRUM X NOW 🎯
-                </button>
+            
+            <!-- Technical Comparison Table -->
+            <div class="bg-gray-700 p-6 rounded-lg mb-8">
+                <h4 class="text-2xl text-center mb-4 patriotic-text">🔍 TECHNICAL COMPARISON</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="bg-gray-800">
+                                <th class="p-3 text-left">Feature</th>
+                                <th class="p-3 text-center">Ferrum X</th>
+                                <th class="p-3 text-center">KMBox</th>
+                                <th class="p-3 text-center">Arduino</th>
+                                <th class="p-3 text-center">MAKCM</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-600">
+                                <td class="p-3 font-medium">USB 2.0 Emulation</td>
+                                <td class="p-3 text-center text-green-500">✓</td>
+                                <td class="p-3 text-center text-red-500">✗</td>
+                                <td class="p-3 text-center text-red-500">✗</td>
+                                <td class="p-3 text-center text-red-500">✗</td>
+                            </tr>
+                            <tr class="border-b border-gray-600">
+                                <td class="p-3 font-medium">8K Polling Support</td>
+                                <td class="p-3 text-center text-green-500">✓</td>
+                                <td class="p-3 text-center text-red-500">✗</td>
+                                <td class="p-3 text-center text-red-500">✗</td>
+                                <td class="p-3 text-center text-red-500">✗</td>
+                            </tr>
+                            <tr class="border-b border-gray-600">
+                                <td class="p-3 font-medium">True Passthrough</td>
+                                <td class="p-3 text-center text-green-500">✓</td>
+                                <td class="p-3 text-center text-yellow-500">Partial</td>
+                                <td class="p-3 text-center text-yellow-500">Partial</td>
+                                <td class="p-3 text-center text-red-500">✗</td>
+                            </tr>
+                            <tr class="border-b border-gray-600">
+                                <td class="p-3 font-medium">Custom USB Drivers</td>
+                                <td class="p-3 text-center text-green-500">✓</td>
+                                <td class="p-3 text-center text-red-500">✗</td>
+                                <td class="p-3 text-center text-red-500">✗</td>
+                                <td class="p-3 text-center text-red-500">✗</td>
+                            </tr>
+                            <tr class="border-b border-gray-600">
+                                <td class="p-3 font-medium">Software Compatibility</td>
+                                <td class="p-3 text-center text-green-500">Full</td>
+                                <td class="p-3 text-center text-yellow-500">Limited</td>
+                                <td class="p-3 text-center text-yellow-500">Limited</td>
+                                <td class="p-3 text-center text-red-500">None</td>
+                            </tr>
+                            <tr class="border-b border-gray-600">
+                                <td class="p-3 font-medium">Added Latency (1000Hz)</td>
+                                <td class="p-3 text-center text-green-500">0.6ms</td>
+                                <td class="p-3 text-center text-yellow-500">~1-2ms</td>
+                                <td class="p-3 text-center text-red-500">~2-4ms</td>
+                                <td class="p-3 text-center text-yellow-500">~1-2ms</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <!-- Product Gallery -->
@@ -499,13 +421,13 @@
                 <h4 class="text-xl font-bold mb-4 text-center patriotic-text">🔍 PRODUCT GALLERY</h4>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div class="bg-gray-800 p-2 rounded-lg">
-                        <img src="https://i.imgur.com/t9GFjcX.jpg" alt="Ferrum X with Logo" class="w-full h-auto rounded-lg" />
+                        <img src="Discord_jhSFf3r18j.png" alt="Ferrum X with Logo" class="w-full h-auto rounded-lg" />
                     </div>
                     <div class="bg-gray-800 p-2 rounded-lg">
-                        <img src="https://i.imgur.com/m5Bs3Xz.jpg" alt="Ferrum X with Ports" class="w-full h-auto rounded-lg" />
+                        <img src="Discord_6YSQ4rVRtE.png" alt="Ferrum X with Ports" class="w-full h-auto rounded-lg" />
                     </div>
                     <div class="bg-gray-800 p-2 rounded-lg">
-                        <img src="https://i.imgur.com/UAVKBYS.jpg" alt="Ferrum X Logo Detail" class="w-full h-auto rounded-lg" />
+                        <img src="Discord_58ByShX4ZX.png" alt="Ferrum X Circuit Board" class="w-full h-auto rounded-lg" />
                     </div>
                 </div>
             </div>
@@ -528,6 +450,13 @@
                     <div class="spin">🛡️</div>
                     <div class="text-sm">Zero Detection</div>
                 </div>
+            </div>
+
+            <!-- Final Call to Action -->
+            <div class="text-center mb-8">
+                <button onclick="startPurchase()" class="bg-gradient-to-r from-gray-500 via-gray-600 to-gray-500 hover:from-gray-600 hover:via-gray-700 hover:to-gray-600 text-white font-bold py-6 px-12 rounded-lg text-2xl pulse w-full max-w-md golden-border">
+                    🎯 ORDER YOUR FERRUM X NOW 🎯
+                </button>
             </div>
 
             <!-- Disclaimers -->
@@ -566,82 +495,83 @@
     </div>
 
     <script>
-        // Random stock fluctuation
-        setInterval(() => {
-            const stock = Math.floor(Math.random() * 50) + 150;
-            document.getElementById('stock-number').textContent = stock;
-        }, 3000);
-
-        // Random online user count
-        setInterval(() => {
-            const users = Math.floor(Math.random() * 1000) + 8000;
-            document.getElementById('onlineCount').textContent = users.toLocaleString();
-        }, 5000);
-
-        // Live stats update
-        setInterval(() => {
-            document.getElementById('currentSpeed').textContent = 
-                (Math.random() * 0.9 + 0.1).toFixed(1) + 'ms';
-            document.getElementById('uptime').textContent = 
-                (99 + Math.random() * 0.99).toFixed(2) + '%';
-            document.getElementById('detectionRate').textContent = '0%';
-        }, 2000);
-
-        // Compatibility checker
-        function checkCompatibility() {
-            const result = document.getElementById('compatibility-result');
-            result.classList.remove('hidden');
-            setTimeout(() => {
-                result.querySelector('p').textContent = "🎯 PERFECT MATCH! YOUR DEVICE IS FULLY COMPATIBLE!";
-            }, 800);
-        }
-
-        // Package selection
-        function selectPackage(type) {
-            unlockAchievement(`Selected ${type.toUpperCase()} Package!`);
-            alert('Excellent choice! This package is perfect for your gaming needs.');
-        }
-
-        // Achievement system
-        function unlockAchievement(text) {
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize elements safely with checks
+            const crosshair = document.getElementById('crosshair');
             const achievement = document.getElementById('achievement');
-            document.getElementById('achievement-text').textContent = text;
-            achievement.style.display = 'block';
-            setTimeout(() => {
-                achievement.style.display = 'none';
-            }, 3000);
-        }
-
-        // Chat functionality
-        function showChat() {
-            alert('All our support agents are currently assisting other customers. Please leave a message and we\'ll get back to you shortly.');
-        }
-
-        // Start purchase
-        function startPurchase() {
-            alert('Thank you for your interest in Ferrum X! Please complete your order on the next page.');
-        }
-
-        // Configure crosshair animation
-        const crosshair = document.getElementById('crosshair');
-        setInterval(() => {
-            crosshair.style.transform = `translateY(${Math.sin(Date.now() / 1000) * 50}px)`;
-        }, 100);
-
-        // Initialize everything
-        document.addEventListener('DOMContentLoaded', () => {
+            const achievementText = document.getElementById('achievement-text');
+            const onlineCount = document.getElementById('onlineCount');
+            const activeUsers = document.getElementById('activeUsers');
+            const currentSpeedDisplay = document.getElementById('currentSpeedDisplay');
+            const uptimeDisplay = document.getElementById('uptimeDisplay');
+            const detectionRateDisplay = document.getElementById('detectionRateDisplay');
+            
+            // Safely animate the crosshair element
+            if (crosshair) {
+                setInterval(() => {
+                    crosshair.style.transform = `translateY(${Math.sin(Date.now() / 1000) * 50}px)`;
+                }, 100);
+            }
+            
+            // Update stats only if elements exist
+            const statsInterval = setInterval(() => {
+                if (onlineCount) onlineCount.textContent = (Math.floor(Math.random() * 1000) + 8000).toLocaleString();
+                if (activeUsers) activeUsers.textContent = (Math.floor(Math.random() * 1000) + 8000).toLocaleString();
+                if (currentSpeedDisplay) currentSpeedDisplay.textContent = (Math.random() * 0.9 + 0.1).toFixed(1) + 'ms';
+                if (uptimeDisplay) uptimeDisplay.textContent = (99 + Math.random() * 0.99).toFixed(2) + '%';
+                if (detectionRateDisplay) detectionRateDisplay.textContent = '0%';
+            }, 2000);
+            
+            // Show achievement notification
+            function unlockAchievement(text) {
+                if (!achievement || !achievementText) return;
+                
+                achievementText.textContent = text;
+                achievement.style.display = 'block';
+                setTimeout(() => {
+                    achievement.style.display = 'none';
+                }, 3000);
+            }
+            
+            // Initialize with welcome message
             unlockAchievement('Welcome to Ferrum X! 🎯');
+            
+            // Setup global functions
+            window.startPurchase = function() {
+                alert('Thank you for your interest in Ferrum X! Please complete your order on the next page.');
+            };
+            
+            window.showChat = function() {
+                alert('All our support agents are currently assisting other customers. Please leave a message and we\'ll get back to you shortly.');
+            };
+            
+            window.selectPackage = function(type) {
+                unlockAchievement(`Selected ${type.toUpperCase()} Package!`);
+                alert('Excellent choice! This package is perfect for your gaming needs.');
+            };
+            
+            window.checkCompatibility = function() {
+                const result = document.getElementById('compatibility-result');
+                if (!result) return;
+                
+                result.classList.remove('hidden');
+                const resultText = result.querySelector('p');
+                if (resultText) {
+                    setTimeout(() => {
+                        resultText.textContent = "🎯 PERFECT MATCH! YOUR DEVICE IS FULLY COMPATIBLE!";
+                    }, 800);
+                }
+            };
+            
+            window.generateConfig = function() {
+                alert('Configuration generated! Your settings have been optimized for maximum performance.');
+            };
+            
+            window.copyConfig = function() {
+                alert('Settings copied to clipboard! You can now paste them into your config file.');
+            };
         });
-        
-        // Generate configuration
-        function generateConfig() {
-            alert('Configuration generated! Your settings have been optimized for maximum performance.');
-        }
-        
-        // Copy configuration
-        function copyConfig() {
-            alert('Settings copied to clipboard! You can now paste them into your config file.');
-        }
     </script>
 
 </body>
