@@ -187,8 +187,18 @@
             <div class="text-center mb-8 float">
                 <div class="relative">
                     <div class="grid grid-cols-2 gap-4 mb-6">
-                        <img src="/api/placeholder/400/300" alt="Ferrum X Hardware" class="rounded-lg opacity-75 golden-border"/>
-                        <img src="/api/placeholder/400/300" alt="Ferrum X Performance" class="rounded-lg opacity-75 golden-border"/>
+                        <div class="relative">
+                            <img src="/api/placeholder/400/300" alt="Ferrum X Hardware" class="rounded-lg opacity-0 golden-border"/>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <img src="https://i.imgur.com/dHETjPV.jpg" alt="Ferrum X Hardware - External Case" class="max-w-full max-h-full rounded-lg golden-border"/>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <img src="/api/placeholder/400/300" alt="Ferrum X Internal Board" class="rounded-lg opacity-0 golden-border"/>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <img src="https://i.imgur.com/6vwSPcq.jpg" alt="Ferrum X Internal Circuit Board" class="max-w-full max-h-full rounded-lg golden-border"/>
+                            </div>
+                        </div>
                     </div>
                     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 bg-red-600 text-white px-8 py-2 text-xl font-bold">
                         NEXT GEN!
@@ -368,9 +378,15 @@
                 </div>
             </div>
 
-            <!-- Live Status -->
+            <!-- Software Interface -->
             <div class="bg-gray-700 rounded-lg p-6 mb-8">
-                <h4 class="text-xl font-bold mb-4 text-center patriotic-text">🔄 LIVE STATUS DASHBOARD</h4>
+                <h4 class="text-xl font-bold mb-4 text-center patriotic-text">⚙️ FERRUM UTILITY SOFTWARE</h4>
+                <div class="grid grid-cols-1 gap-4 mb-4">
+                    <div class="bg-gray-800 p-4 rounded-lg text-center">
+                        <img src="https://i.imgur.com/h9n4Mhu.png" alt="Ferrum Utility Software Interface" class="mx-auto rounded-lg mb-3 max-w-full" />
+                        <div class="text-sm text-gray-400">Advanced configuration utility with plug-and-play detection</div>
+                    </div>
+                </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                     <div class="bg-gray-800 p-4 rounded-lg text-center">
                         <div class="text-2xl font-bold rainbow-text" id="activeUsers">8,432</div>
@@ -517,6 +533,22 @@
                 </button>
             </div>
 
+            <!-- Product Gallery -->
+            <div class="bg-gray-700 rounded-lg p-6 mb-8">
+                <h4 class="text-xl font-bold mb-4 text-center patriotic-text">🔍 PRODUCT GALLERY</h4>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="bg-gray-800 p-2 rounded-lg">
+                        <img src="https://i.imgur.com/t9GFjcX.jpg" alt="Ferrum X with Logo" class="w-full h-auto rounded-lg" />
+                    </div>
+                    <div class="bg-gray-800 p-2 rounded-lg">
+                        <img src="https://i.imgur.com/m5Bs3Xz.jpg" alt="Ferrum X with Ports" class="w-full h-auto rounded-lg" />
+                    </div>
+                    <div class="bg-gray-800 p-2 rounded-lg">
+                        <img src="https://i.imgur.com/UAVKBYS.jpg" alt="Ferrum X Logo Detail" class="w-full h-auto rounded-lg" />
+                    </div>
+                </div>
+            </div>
+            
             <!-- Trust Badges -->
             <div class="grid grid-cols-4 gap-4 mb-8">
                 <div class="bg-gray-800 p-4 rounded-lg text-center">
@@ -553,4 +585,103 @@
     </div>
 
     <!-- Footer -->
-    <div class="bg-black p-8 text
+    <div class="bg-black p-8 text-center mt-8">
+        <div class="ascii-art mb-4">
+           ███████ ███████ ██████  ██████  ██    ██ ███    ███     ██   ██ 
+           ██      ██      ██   ██ ██   ██ ██    ██ ████  ████      ██ ██  
+           █████   █████   ██████  ██████  ██    ██ ██ ████ ██       ███   
+           ██      ██      ██   ██ ██   ██ ██    ██ ██  ██  ██      ██ ██  
+           ██      ███████ ██   ██ ██   ██  ██████  ██      ██     ██   ██ 
+        </div>
+        <div class="text-green-400 font-bold text-xl mb-2 rainbow-text">
+            Next Generation Input Technology
+        </div>
+        <div class="text-sm text-gray-500">
+            "Precision. Performance. Perfection."
+        </div>
+        <div class="mt-4 text-xs text-gray-600">
+            © 2025 Ferrum Gaming Technologies. All Rights Reserved.
+        </div>
+    </div>
+
+    <script>
+        // Random stock fluctuation
+        setInterval(() => {
+            const stock = Math.floor(Math.random() * 50) + 150;
+            document.getElementById('stock-number').textContent = stock;
+        }, 3000);
+
+        // Random online user count
+        setInterval(() => {
+            const users = Math.floor(Math.random() * 1000) + 8000;
+            document.getElementById('onlineCount').textContent = users.toLocaleString();
+        }, 5000);
+
+        // Live stats update
+        setInterval(() => {
+            document.getElementById('currentSpeed').textContent = 
+                (Math.random() * 0.9 + 0.1).toFixed(1) + 'ms';
+            document.getElementById('uptime').textContent = 
+                (99 + Math.random() * 0.99).toFixed(2) + '%';
+            document.getElementById('detectionRate').textContent = '0%';
+        }, 2000);
+
+        // Compatibility checker
+        function checkCompatibility() {
+            const result = document.getElementById('compatibility-result');
+            result.classList.remove('hidden');
+            setTimeout(() => {
+                result.querySelector('p').textContent = "🎯 PERFECT MATCH! YOUR DEVICE IS FULLY COMPATIBLE!";
+            }, 800);
+        }
+
+        // Package selection
+        function selectPackage(type) {
+            unlockAchievement(`Selected ${type.toUpperCase()} Package!`);
+            alert('Excellent choice! This package is perfect for your gaming needs.');
+        }
+
+        // Achievement system
+        function unlockAchievement(text) {
+            const achievement = document.getElementById('achievement');
+            document.getElementById('achievement-text').textContent = text;
+            achievement.style.display = 'block';
+            setTimeout(() => {
+                achievement.style.display = 'none';
+            }, 3000);
+        }
+
+        // Chat functionality
+        function showChat() {
+            alert('All our support agents are currently assisting other customers. Please leave a message and we\'ll get back to you shortly.');
+        }
+
+        // Start purchase
+        function startPurchase() {
+            alert('Thank you for your interest in Ferrum X! Please complete your order on the next page.');
+        }
+
+        // Configure crosshair animation
+        const crosshair = document.getElementById('crosshair');
+        setInterval(() => {
+            crosshair.style.transform = `translateY(${Math.sin(Date.now() / 1000) * 50}px)`;
+        }, 100);
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            unlockAchievement('Welcome to Ferrum X! 🎯');
+        });
+        
+        // Generate configuration
+        function generateConfig() {
+            alert('Configuration generated! Your settings have been optimized for maximum performance.');
+        }
+        
+        // Copy configuration
+        function copyConfig() {
+            alert('Settings copied to clipboard! You can now paste them into your config file.');
+        }
+    </script>
+
+</body>
+</html>
